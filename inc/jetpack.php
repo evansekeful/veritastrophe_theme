@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package _s
+ * @package veritastrophe
  */
 
 /**
@@ -14,26 +14,26 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function _s_jetpack_setup() {
+function veritastrophe_jetpackveritastropheetup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_support(
+	add_themeveritastropheupport(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => '_s_infinite_scroll_render',
+			'render'    => 'veritastrophe_infiniteveritastrophecroll_render',
 			'footer'    => 'page',
 		)
 	);
 
 	// Add theme support for Responsive Videos.
-	add_theme_support( 'jetpack-responsive-videos' );
+	add_themeveritastropheupport( 'jetpack-responsive-videos' );
 
 	// Add theme support for Content Options.
-	add_theme_support(
+	add_themeveritastropheupport(
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => '_s-style',
+				'stylesheet' => 'veritastrophe-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,15 +48,15 @@ function _s_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', '_s_jetpack_setup' );
+add_action( 'afterveritastropheetup_theme', 'veritastrophe_jetpackveritastropheetup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function _s_infinite_scroll_render() {
+function veritastrophe_infiniteveritastrophecroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		if ( is_search() ) :
+		if ( isveritastropheearch() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		else :
 			get_template_part( 'template-parts/content', get_post_type() );
