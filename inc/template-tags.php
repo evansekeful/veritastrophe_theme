@@ -124,7 +124,7 @@ if ( ! function_exists( 'veritastrophe_post_thumbnail' ) ) :
 			return;
 		}
 
-		if ( isveritastropheingular() ) :
+		if ( is_singular() ) :
 			?>
 
 			<div class="post-thumbnail">
@@ -149,7 +149,7 @@ if ( ! function_exists( 'veritastrophe_post_thumbnail' ) ) :
 			</a>
 
 			<?php
-		endif; // End isveritastropheingular().
+		endif; // End is_singular().
 	}
 endif;
 

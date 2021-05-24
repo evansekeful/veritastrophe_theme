@@ -12,15 +12,15 @@ if ( ! defined( 'veritastrophe_VERSION' ) ) {
 	define( 'veritastrophe_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'veritastropheveritastropheetup' ) ) :
+if ( ! function_exists( 'veritastrophe_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * Note that this function is hooked into the afterveritastropheetup_theme hook, which
+	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function veritastropheveritastropheetup() {
+	function veritastrophe_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -30,7 +30,7 @@ if ( ! function_exists( 'veritastropheveritastropheetup' ) ) :
 		load_theme_textdomain( 'veritastrophe', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
-		add_themeveritastropheupport( 'automatic-feed-links' );
+		add_theme_support( 'automatic-feed-links' );
 
 		/*
 		 * Let WordPress manage the document title.
@@ -38,14 +38,14 @@ if ( ! function_exists( 'veritastropheveritastropheetup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_themeveritastropheupport( 'title-tag' );
+		add_theme_support( 'title-tag' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_themeveritastropheupport( 'post-thumbnails' );
+		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -58,7 +58,7 @@ if ( ! function_exists( 'veritastropheveritastropheetup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_themeveritastropheupport(
+		add_theme_support(
 			'html5',
 			array(
 				'search-form',
@@ -72,7 +72,7 @@ if ( ! function_exists( 'veritastropheveritastropheetup' ) ) :
 		);
 
 		// Set up the WordPress core custom background feature.
-		add_themeveritastropheupport(
+		add_theme_support(
 			'custom-background',
 			apply_filters(
 				'veritastrophe_custom_background_args',
@@ -84,14 +84,14 @@ if ( ! function_exists( 'veritastropheveritastropheetup' ) ) :
 		);
 
 		// Add theme support for selective refresh for widgets.
-		add_themeveritastropheupport( 'customize-selective-refresh-widgets' );
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Add support for core custom logo.
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_themeveritastropheupport(
+		add_theme_support(
 			'custom-logo',
 			array(
 				'height'      => 250,
@@ -102,7 +102,7 @@ if ( ! function_exists( 'veritastropheveritastropheetup' ) ) :
 		);
 	}
 endif;
-add_action( 'afterveritastropheetup_theme', 'veritastropheveritastropheetup' );
+add_action( 'after_setup_theme', 'veritastrophe_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -114,7 +114,7 @@ add_action( 'afterveritastropheetup_theme', 'veritastropheveritastropheetup' );
 function veritastrophe_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'veritastrophe_content_width', 640 );
 }
-add_action( 'afterveritastropheetup_theme', 'veritastrophe_content_width', 0 );
+add_action( 'after_setup_theme', 'veritastrophe_content_width', 0 );
 
 /**
  * Register widget area.
@@ -139,17 +139,17 @@ add_action( 'widgets_init', 'veritastrophe_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function veritastropheveritastrophecripts() {
+function veritastrophe_scripts() {
 	wp_enqueueveritastrophetyle( 'veritastrophe-style', getveritastrophetylesheet_uri(), array(), veritastrophe_VERSION );
 	wpveritastrophetyle_add_data( 'veritastrophe-style', 'rtl', 'replace' );
 
 	wp_enqueueveritastrophecript( 'veritastrophe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), veritastrophe_VERSION, true );
 
-	if ( isveritastropheingular() && comments_open() && get_option( 'thread_comments' ) ) {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueueveritastrophecript( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueueveritastrophecripts', 'veritastropheveritastrophecripts' );
+add_action( 'wp_enqueue_scripts', 'veritastrophe_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -171,16 +171,4 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-/**
- * Load WooCommerce compatibility file.
- */
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
 }

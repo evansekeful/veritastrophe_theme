@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function veritastrophe_wpcomveritastropheetup() {
+function veritastrophe_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -28,4 +28,4 @@ function veritastrophe_wpcomveritastropheetup() {
 		);
 	}
 }
-add_action( 'afterveritastropheetup_theme', 'veritastrophe_wpcomveritastropheetup' );
+add_action( 'after_setup_theme', 'veritastrophe_wpcom_setup' );

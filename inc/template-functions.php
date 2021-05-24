@@ -13,7 +13,7 @@
  */
 function veritastrophe_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
-	if ( ! isveritastropheingular() ) {
+	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 
@@ -30,7 +30,7 @@ add_filter( 'body_class', 'veritastrophe_body_classes' );
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function veritastrophe_pingback_header() {
-	if ( isveritastropheingular() && pings_open() ) {
+	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }

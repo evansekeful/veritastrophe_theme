@@ -16,8 +16,8 @@
  *
  * @uses veritastrophe_headerveritastrophetyle()
  */
-function veritastrophe_custom_headerveritastropheetup() {
-	add_themeveritastropheupport(
+function veritastrophe_custom_header_setup() {
+	add_theme_support(
 		'custom-header',
 		apply_filters(
 			'veritastrophe_custom_header_args',
@@ -32,22 +32,22 @@ function veritastrophe_custom_headerveritastropheetup() {
 		)
 	);
 }
-add_action( 'afterveritastropheetup_theme', 'veritastrophe_custom_headerveritastropheetup' );
+add_action( 'after_setup_theme', 'veritastrophe_custom_header_setup' );
 
 if ( ! function_exists( 'veritastrophe_headerveritastrophetyle' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see veritastrophe_custom_headerveritastropheetup().
+	 * @see veritastrophe_custom_header_setup().
 	 */
 	function veritastrophe_headerveritastrophetyle() {
 		$header_text_color = get_header_textcolor();
 
 		/*
 		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_themeveritastropheupport( 'custom-header' ).
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
 		 */
-		if ( get_themeveritastropheupport( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
 		}
 
