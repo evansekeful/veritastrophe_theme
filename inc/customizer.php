@@ -11,9 +11,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function veritastrophe_customize_register( $wp_customize ) {
-	$wp_customize->getveritastropheetting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->getveritastropheetting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->getveritastropheetting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
