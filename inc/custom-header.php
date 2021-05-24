@@ -14,7 +14,7 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses veritastrophe_headerveritastrophetyle()
+ * @uses veritastrophe_header_style()
  */
 function veritastrophe_custom_header_setup() {
 	add_theme_support(
@@ -27,20 +27,20 @@ function veritastrophe_custom_header_setup() {
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'veritastrophe_headerveritastrophetyle',
+				'wp-head-callback'   => 'veritastrophe_header_style',
 			)
 		)
 	);
 }
 add_action( 'after_setup_theme', 'veritastrophe_custom_header_setup' );
 
-if ( ! function_exists( 'veritastrophe_headerveritastrophetyle' ) ) :
+if ( ! function_exists( 'veritastrophe_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
 	 * @see veritastrophe_custom_header_setup().
 	 */
-	function veritastrophe_headerveritastrophetyle() {
+	function veritastrophe_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

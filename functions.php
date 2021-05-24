@@ -140,12 +140,12 @@ add_action( 'widgets_init', 'veritastrophe_widgets_init' );
  * Enqueue scripts and styles.
  */
 function veritastrophe_scripts() {
-	wp_enqueueveritastrophetyle( 'veritastrophe-style', getveritastrophetylesheet_uri(), array(), veritastrophe_VERSION );
-	wpveritastrophetyle_add_data( 'veritastrophe-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'veritastrophe-style', get_stylesheet_uri(), array(), veritastrophe_VERSION );
+	wp_style_add_data( 'veritastrophe-style', 'rtl', 'replace' );
 
 	wp_enqueueveritastrophecript( 'veritastrophe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), veritastrophe_VERSION, true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	if ( isveritastropheingular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueueveritastrophecript( 'comment-reply' );
 	}
 }
@@ -170,5 +170,3 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-}
