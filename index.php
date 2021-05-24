@@ -53,5 +53,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-getveritastropheidebar();
+get_sidebar();
 get_footer();
