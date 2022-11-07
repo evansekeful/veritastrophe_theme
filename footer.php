@@ -13,17 +13,12 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'veritastrophe' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'veritastrophe' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'veritastrophe' ), 'veritastrophe', '<a href="https://automattic.com/">Automattic</a>' );
-				?>
+			<p>&copy;2014-<script language="javascript" type="text/javascript">
+					var today = new Date()
+					var year = today.getFullYear()
+					document.write(year)
+					</script> Elizabeth Evans, aka El Beastie.</br>
+			Made with <i class="fas fa-heart" aria-hidden="true"></i> by <a href="https://github.com/evansekeful">El Beastie</a>.</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
