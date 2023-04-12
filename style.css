@@ -366,9 +366,9 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
+  color: #262626ff;
   font-family: "Inconsolata", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.5; }
 
 h1,
@@ -378,7 +378,25 @@ h4,
 h5,
 h6 {
   clear: both;
-  font-family: "Raleway", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+  font-family: "Raleway", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #000; }
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    text-decoration: none; }
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2;
+  margin: 0.67em 0; }
+
+h2 {
+  font-size: 2.5em;
+  line-height: 1.2;
+  margin: 0.83em 0; }
 
 p {
   margin-bottom: 1.5em; }
@@ -475,11 +493,11 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #4169e1; }
+  color: #191970ff; }
   a:visited {
-    color: #800080; }
+    color: #666; }
   a:hover, a:focus, a:active {
-    color: #191970; }
+    color: #55ffffff; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -770,7 +788,7 @@ textarea {
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
     clip-path: none;
-    color: #21759b;
+    color: #222f94;
     display: block;
     font-size: 0.875rem;
     font-weight: 700;
