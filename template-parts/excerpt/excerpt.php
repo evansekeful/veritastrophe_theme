@@ -10,7 +10,6 @@
 ?>
 
 <p id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php veritastrophe_post_thumbnail(); ?>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -18,6 +17,7 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;?>
+		<?php veritastrophe_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-excerpt">
