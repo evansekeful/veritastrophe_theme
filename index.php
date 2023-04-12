@@ -37,8 +37,10 @@ get_header();
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 * 
+				 * To use different post types with excerpts, refer to the following: https://wordpress.stackexchange.com/questions/106568/the-excerpt-in-content-php-and-get-template-part-in-single-php
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/excerpt/excerpt', get_post_type() );
 
 			endwhile;
 
