@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<p id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php veritastrophe_post_thumbnail(); ?>
 	<header class="entry-header">
 		<?php
@@ -26,4 +26,4 @@
 		?>
 	</div><!-- .entry-excerpt -->
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</p><!-- #post-<?php the_ID(); ?> -->
