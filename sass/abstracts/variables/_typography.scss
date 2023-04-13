@@ -5,6 +5,12 @@
     font-weight: 100 1000;
   }
 @font-face {
+    font-family: "Bitter";
+    src: url("fonts/Bitter-VariableFont_wght.ttf") format("woff2 supports variations"),
+         url("fonts/Bitter-VariableFont_wght.ttf") format("woff2-variations");
+    font-weight: 100 1000;
+  }
+@font-face {
     font-family: "Raleway";
     src: url("fonts/Raleway-VariableFont_wght.ttf") format("woff2 supports variations"),
          url("fonts/Raleway-VariableFont_wght.ttf") format("woff2-variations");
@@ -22,7 +28,7 @@ $font__fallback: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Ca
 // stylelint-disable value-keyword-case
 $font__main: "Inconsolata", $font__fallback;
 // stylelint-enable value-keyword-case
-$font__header: "Raleway", $font__fallback;
+$font__header: "Bitter", $font__fallback;
 $font__menu: "SourceCodePro", $font__fallback;
 $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", courier, monospace;

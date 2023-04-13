@@ -9,6 +9,11 @@ WooCommerce styles override
   font-weight: 100 1000; }
 
 @font-face {
+  font-family: "Bitter";
+  src: url("fonts/Bitter-VariableFont_wght.ttf") format("woff2 supports variations"), url("fonts/Bitter-VariableFont_wght.ttf") format("woff2-variations");
+  font-weight: 100 1000; }
+
+@font-face {
   font-family: "Raleway";
   src: url("fonts/Raleway-VariableFont_wght.ttf") format("woff2 supports variations"), url("fonts/Raleway-VariableFont_wght.ttf") format("woff2-variations");
   font-weight: 100 1000; }
